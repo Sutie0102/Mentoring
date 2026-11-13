@@ -1,0 +1,15 @@
+# 환경변수 (비밀번호, 시크릿)
+.env
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
+# Node
+node_modules/
+dist/
+
+# OS
+.DS_Store
