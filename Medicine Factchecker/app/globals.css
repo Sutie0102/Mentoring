@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 브랜드: 남색(navy) + 청록(teal). 판정 색은 색각 검증을 거친 값 (라이트/다크 별도) */
+:root {
+  --background: #f7f8fa;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --muted: #f1f4f8;
+  --muted-foreground: #5b6474;
+  --border: #e3e7ee;
+  --ring: #0d9488;
+  --brand-navy: #1e2f6b;
+  --brand-teal: #0d9488;
+  --brand-teal-soft: #ccfbf1;
+  --primary: #1e2f6b;
+  --primary-foreground: #ffffff;
+  --accent: #0d9488;
+  --accent-foreground: #ffffff;
+  --verdict-true: #15803d;
+  --verdict-exag: #d97706;
+  --verdict-false: #dc2626;
+  --verdict-unk: #64748b;
+  --shadow-soft: 0 1px 2px rgb(15 23 42 / 0.04), 0 8px 24px -8px rgb(15 23 42 / 0.08);
+}
+
+.dark {
+  --background: #0b1120;
+  --foreground: #e6eaf2;
+  --card: #111a2e;
+  --card-foreground: #e6eaf2;
+  --muted: #17223a;
+  --muted-foreground: #98a2b3;
+  --border: #22304d;
+  --ring: #2dd4bf;
+  --brand-navy: #a5b4fc;
+  --brand-teal: #2dd4bf;
+  --brand-teal-soft: #134e4a;
+  --primary: #e6eaf2;
+  --primary-foreground: #0b1120;
+  --accent: #2dd4bf;
+  --accent-foreground: #04231f;
+  --verdict-true: #4ade80;
+  --verdict-exag: #f59e0b;
+  --verdict-false: #ef4444;
+  --verdict-unk: #94a3b8;
+  --shadow-soft: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px -8px rgb(0 0 0 / 0.5);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-navy: var(--brand-navy);
+  --color-teal: var(--brand-teal);
+  --color-teal-soft: var(--brand-teal-soft);
+  --color-verdict-true: var(--verdict-true);
+  --color-verdict-exag: var(--verdict-exag);
+  --color-verdict-false: var(--verdict-false);
+  --color-verdict-unk: var(--verdict-unk);
+  --shadow-soft: var(--shadow-soft);
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
